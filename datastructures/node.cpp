@@ -2,7 +2,11 @@
 #include "node.hpp"
 
 template<class T>
-Node<T>::Node() {;} 
+Node<T>::Node() 
+{
+    this->data = 0 ;
+    this->next = NULL ;
+} 
 
         
 template<class T>
@@ -40,7 +44,7 @@ Node<T> * Node<T>::delNext()
 template<class T>
 Node<T> * Node<T>::get( const T & item, Node<T> * pnext) 
 {
-    Node<T> * newNode = new Note<T>(item, pnext ) ;
+    Node<T> * newNode = new Node<T>(item, pnext ) ;
     if ( newNode == NULL ) {
         std::cerr << "failed" << std::endl ;
     }

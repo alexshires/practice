@@ -1,5 +1,8 @@
 // templated linked list
 
+#ifndef NODE
+#define NODE
+
 #include <iostream>
 
 template<class T> 
@@ -23,3 +26,6 @@ class Node
         Node<T> * next ;
         T data ;
 } ;
+
+
+#endif /* NODE */
