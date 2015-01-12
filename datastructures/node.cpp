@@ -1,29 +1,15 @@
 // templated linked list
 #include "node.hpp"
 
-template<class T>
-Node<T>::Node() 
-{
-    this->data = 0 ;
-    this->next = NULL ;
-} 
-
         
 template<class T>
-Node<T>::Node( const T & item, Node<T> *pnext ) 
-{
-    this->data = item ;
-    this->next = pnext ;
-}
-        
-template<class T>
-Node<T> * Node<T>::getNext() 
+node<T> * node<T>::getNext() 
 {
     return this->next ;
 }
         
 template<class T>
-void Node<T>::insert( Node<T> * p ) 
+void node<T>::insert( node<T> * p ) 
 {
     //swap
     p->next = this->next ;
@@ -31,22 +17,22 @@ void Node<T>::insert( Node<T> * p )
 }
         
 template<class T>
-Node<T> * Node<T>::delNext() 
+node<T> * node<T>::delNext() 
 {
-    Node<T> * tmpNode ;
+    node<T> * tmpnode ;
     if ( next != NULL ) {
-        tmpNode = this->next ;
+        tmpnode = this->next ;
         this->next = next->getNext() ;
     }
-    return tmpNode ;
+    return tmpnode ;
 }
         
 template<class T>
-Node<T> * Node<T>::get( const T & item, Node<T> * pnext) 
+node<T> * node<T>::get( const T & item, node<T> * pnext) 
 {
-    Node<T> * newNode = new Node<T>(item, pnext ) ;
-    if ( newNode == NULL ) {
+    node<T> * newnode = new node<T>(item, pnext ) ;
+    if ( newnode == NULL ) {
         std::cerr << "failed" << std::endl ;
     }
-    return newNode ;
+    return newnode ;
 }

@@ -1,16 +1,20 @@
 #include "test.hpp"
 #include "node.hpp"
+#include "list.hpp"
 #include <iostream>
 
 int main(int argc, char *argv[])
 {
     //default class works (Makefile, linking etc)
-    test t ;
+    test<int> t1 ;
+    test<int> t2(2) ;
     //default contricutor works
-    Node<int> a() ;
+    node<int> a() ;
     //constructor breaks?
-    Node<int> b(1, NULL) ;
-    Node<int> c(5, &b) ;
+    node<int> b(1) ;
+    //node<int> c(5, &b) ;
+    //
+    LinkedList<int> l () ;
 
     //todo implement testing??
 

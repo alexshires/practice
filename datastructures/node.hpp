@@ -6,26 +6,41 @@
 #include <iostream>
 
 template<class T> 
-class Node
+class node
 {
     public : 
-        Node() ; //default cosntructor
+        node() ; //default cosntructor
         //real cosntructor
-        Node( const T & item, Node<T> *pnext = NULL ) ;
+        node( T item, node<T> * pnext = NULL ) ;
         //next
-        Node<T> * getNext() ;
+        node<T> * getNext() ;
         //insert
-        void insert( Node<T> * p ) ;
+        void insert( node<T> * p ) ;
         //delete
-        Node<T> * delNext() ;
+        node<T> * delNext() ;
         // get
-        Node<T> * get( const T & item, Node<T> * pnext = NULL) ;
+        node<T> * get( const T & item, node<T> * pnext = NULL) ;
     private :
 
         //address of next node!
-        Node<T> * next ;
+        node<T> * next ;
         T data ;
 } ;
+
+template<class T>
+node<T>::node() 
+{
+    this->data = 0 ;
+    this->next = NULL ;
+} 
+
+        
+template<class T>
+node<T>::node( T item, node<T> *pnext ) 
+{
+    this->data = item ;
+    this->next = pnext ;
+}
 
 
 #endif /* NODE */
