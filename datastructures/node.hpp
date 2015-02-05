@@ -20,6 +20,10 @@ class node
         node<T> * delNext() ;
         // get
         node<T> * get( const T & item, node<T> * pnext = NULL) ;
+
+        const T getData() { return data ; }
+        void setData( const T & d ) { data = d ; } 
+
     private :
 
         //address of next node!
@@ -27,20 +31,26 @@ class node
         T data ;
 } ;
 
-template<class T>
+    template<class T>
 node<T>::node() 
 {
     this->data = 0 ;
     this->next = NULL ;
 } 
 
-        
-template<class T>
+
+    template<class T>
 node<T>::node( T item, node<T> *pnext ) 
 {
     this->data = item ;
     this->next = pnext ;
 }
+
+
+template class node<int> ;
+template class node<double> ;
+
+
 
 
 #endif /* NODE */

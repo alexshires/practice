@@ -1,5 +1,3 @@
-#ifndef TEST
-#define TEST
 
 #include "test.hpp"
 
@@ -17,4 +15,3 @@ test<T>::test( T t)
 
 
 
-#endif /* TEST */

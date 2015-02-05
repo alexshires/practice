@@ -36,14 +36,14 @@ INC = -I$(INC_DIR) # -I$(BOOST_INC_DIR) -I$(GSL_INC_DIR)
 #  make DEBUG=true
 # to activate the debug options
 ifeq ($(DEBUG),true)
-	CXXFLAGS     = -g -Wall -ggdb -fPIC $(INC)
+	CXXFLAGS     = -g -v -Wall -ggdb -fPIC $(INC)
 else
 	CXXFLAGS     = -O2 -Wall -fPIC -Xlinker -zdefs $(INC) 
 endif
 
 SOFLAGS      = -shared -Wl,-export-dynamic
 SHLIB        = $(LIB_DIR)/libPractice.so
-SHLIBINC        = -Llib -lPractice
+SHLIBINC        = -Llib/ -lPractice
 
 
 #-----------------------------------------------------------------------------
