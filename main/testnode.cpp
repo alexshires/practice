@@ -15,13 +15,17 @@ int main(int argc, char *argv[])
     node<int> c(5, &b) ;
     //
     LinkedList<int> l ;
+    //todo implement testing??
 
     l.push_back(1) ;
     l.push_back(2) ;
     l.push_back(3) ;
+    l.push_back(2) ;
+    l.push_back(3) ;
 
     l.print() ;
-    //todo implement testing??
+    
+    l.remove_dups() ;
 
     return 0;
 }
